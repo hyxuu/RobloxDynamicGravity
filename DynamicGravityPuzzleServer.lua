@@ -156,10 +156,6 @@ local function applyCustomGravity(player: Player, gravityVector: Vector3)
     force.Parent = humanoidRootPart
     playerGravityForces[player.UserId] = force
 
-    -- Opcional: Para evitar que la gravedad predeterminada de Roblox interfiera,
-    -- podrías intentar cancelar la gravedad predeterminada con una fuerza opuesta
-    -- o configurar la gravedad del workspace a 0 para el personaje, lo cual es más complejo.
-    -- Para este ejemplo, la VectorForce es lo suficientemente fuerte.
 end
 
 -- Función para restaurar la gravedad predeterminada de Roblox para un jugador
@@ -198,7 +194,6 @@ Players.PlayerAdded:Connect(function(player: Player)
                 end
             end)
         end
-        -- Asegúrate de que la gravedad se restablezca cuando el personaje es añadido (después de un respawn)
         restoreDefaultGravity(player)
     end)
 end)
